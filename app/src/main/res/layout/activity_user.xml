@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
-    tools:context=".MainActivity">
+    tools:context=".UserHome">
 
     <TextView
         android:id="@+id/textView2"
@@ -29,7 +29,7 @@
         android:layout_width="106dp"
         android:layout_height="44dp"
         android:background="@color/colorPrimaryDark"
-        android:onClick="OnClick"
+        android:linksClickable="false"
         android:text="Sign In"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +44,6 @@
         android:layout_width="106dp"
         android:layout_height="44dp"
         android:background="@color/colorPrimary"
-        android:onClick="OnClick"
         android:text="Find a Gym"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,7 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.267"
-        tools:text="WorkOut"
+        tools:text="He"
         tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
