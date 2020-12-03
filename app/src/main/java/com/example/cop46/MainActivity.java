@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity
 
         if( button_view.getId() == R.id.sign_button )
     {
-        Intent i = new Intent(MainActivity.this, UserHome.class);
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(i);
     }
 
