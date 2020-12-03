@@ -28,11 +28,14 @@
         android:background="@color/colorPrimaryDark"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
-        app:title="Home"
-        tools:layout_editor_absoluteY="-3dp" />
+        app:title="Home" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
