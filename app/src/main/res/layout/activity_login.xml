@@ -9,17 +9,17 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/log_btn"
         android:layout_width="169dp"
         android:layout_height="69dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Sign In With Google"
+        android:text="Login"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.549" />
 
     <TextView
         android:id="@+id/textView6"
@@ -31,8 +31,10 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
+        app:layout_constraintVertical_bias="0.673"
         tools:text="Forgot Password" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
