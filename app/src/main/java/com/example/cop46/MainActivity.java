@@ -7,9 +7,15 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class MainActivity extends AppCompatActivity
 {
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,6 +41,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
         }
     }
+
+
+
 
 
 
