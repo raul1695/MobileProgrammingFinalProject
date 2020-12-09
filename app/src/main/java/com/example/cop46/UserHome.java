@@ -56,12 +56,15 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
         if(user !=null)
         {
             //find by id the menu_username_text textview and set it to the user's display name.
+            View headerView = nagivationView.getHeaderView(0);
+            TextView navUsername = (TextView) (headerView.findViewById(R.id.menu_username_text));
+            TextView menu_title_text = (TextView) (headerView.findViewById(R.id.menu_title_text));
+            navUsername.setVisibility(headerView.VISIBLE);
+            navUsername.setText("Welcome... "+ user.getDisplayName());
+            menu_title_text.setText("Main Menu User");
 
-            //navigationView.getMenu().findItem(R.id.login).setVisible(false);
-            //  TextView menu_username = (TextView) findViewById(R.id.menu_username_text);
-           /// menu_username.setText(user.getDisplayName());
+            nagivationView_special.getMenu().findItem(R.id.sign_in_menu).setVisible(false);
 
-            //find the avi_menu picture element and set ti to the user's image.
         }
         else{
             //hide the menu_username_text
@@ -115,6 +118,12 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
                 Log.i("TAG", "this is the right clause!");
                 Intent e = new Intent(UserHome.this, FavoriteActivity.class);
                 startActivity(e);
+                return true;
+
+            case R.id.sign_in_menu:
+                Log.i("TAG", "this is the right clause!1");
+                Intent s = new Intent(UserHome.this, LoginActivity.class);
+                startActivity(s);
                 return true;
 
             default:

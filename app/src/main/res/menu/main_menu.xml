@@ -15,6 +15,11 @@
             android:icon="@android:drawable/ic_delete"
             android:title="Logout" />
 
+        <item
+            android:id="@+id/sign_in_menu"
+            android:icon="@android:drawable/checkbox_on_background"
+            android:title="Sign In" />
+
 
     </group>
 

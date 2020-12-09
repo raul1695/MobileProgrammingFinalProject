@@ -28,7 +28,7 @@
         tools:layout_editor_absoluteX="219dp" />
 
     <TextView
-        android:id="@+id/menu_guest_text"
+        android:id="@+id/menu_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Main Menu guest"
