@@ -5,11 +5,13 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/fav_menu"
-            android:icon="@android:drawable/btn_star"
-            android:title="View Favorites List" />
+        android:id="@+id/fav_menu"
+        android:icon="@android:drawable/btn_star"
+        android:title="View Favorites List" />
+
+
         <item
-            android:id="@+id/logout_btn"
+            android:id="@+id/logout_btn_menu"
             android:icon="@android:drawable/ic_delete"
             android:title="Logout" />
 

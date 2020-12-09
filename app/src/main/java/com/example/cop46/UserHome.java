@@ -38,14 +38,11 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
-        if(user !=null)
-        {
-            TextView tv1 = (TextView)findViewById(R.id.textView4);
-            tv1.setText( user.getDisplayName());
-        }
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         nagivationView = findViewById(R.id.nav_view);
+        NavigationView nagivationView_special = (NavigationView) findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar4);
 
         setSupportActionBar(toolbar);
@@ -56,6 +53,33 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
         toggle.syncState();
         nagivationView.setNavigationItemSelectedListener(this);
 
+        if(user !=null)
+        {
+            //find by id the menu_username_text textview and set it to the user's display name.
+
+            //navigationView.getMenu().findItem(R.id.login).setVisible(false);
+            //  TextView menu_username = (TextView) findViewById(R.id.menu_username_text);
+           /// menu_username.setText(user.getDisplayName());
+
+            //find the avi_menu picture element and set ti to the user's image.
+        }
+        else{
+            //hide the menu_username_text
+
+            //hide the avi_menu element
+            View headerView = nagivationView.getHeaderView(0);
+            TextView navUsername = (TextView) (headerView.findViewById(R.id.menu_username_text));
+            navUsername.setVisibility(headerView.VISIBLE);
+            navUsername.setText("You are currently a guest...");
+
+            //hide the logout element
+            nagivationView_special.getMenu().findItem(R.id.logout_btn_menu).setVisible(false);
+
+            //hide the fav_menu menu element.
+            nagivationView_special.getMenu().findItem(R.id.fav_menu).setVisible(false);
+
+            //make visible the menu_guest_text element.
+        }
 
 
     }
@@ -79,8 +103,23 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
-        Log.i("TAG", "this is the right clause!");
-        return true;
+        switch(item.getItemId())
+        {
+            case R.id.logout_btn_menu:
+                Log.i("TAG", "this is the right clause!");
+                Intent i = new Intent(UserHome.this, LogoutActivity.class);
+                startActivity(i);
+                return true;
+
+            case R.id.fav_menu:
+                Log.i("TAG", "this is the right clause!");
+                Intent e = new Intent(UserHome.this, FavoriteActivity.class);
+                startActivity(e);
+                return true;
+
+            default:
+                return false;
+        }
 
     }
 
