@@ -1,6 +1,7 @@
 package com.example.cop46.ui.main;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.cop46.ListFragment;
 import com.example.cop46.MapFragment;
 import com.example.cop46.R;
+import com.example.cop46.UserHome;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -56,4 +60,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Show 2 total pages.
         return 2;
     }
+
+
 }

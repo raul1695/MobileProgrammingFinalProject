@@ -16,7 +16,7 @@ import android.view.View;
 import com.example.cop46.ui.main.SectionsPagerAdapter;
 
 public class SearchActivity extends AppCompatActivity {
-
+    //String q = UserHome
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

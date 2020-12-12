@@ -1,5 +1,6 @@
 package com.example.cop46;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -19,9 +20,13 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 
 public class UserHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    public static final String SEARCH_DATA = "searchData";
+    public static final String TEXT = "text";
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -139,11 +144,28 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
         if( button_view.getId() == R.id.search_btn )
         {
             Intent i = new Intent(UserHome.this, SearchActivity.class);
-            i.putExtra("QUERY_URL", Query_Parameter);
+            TextView search_input = findViewById(R.id.search_param);
+            String loc = search_input.getText().toString();
+
+            if(loc.isEmpty()) {
+
+                loc = "33175";
+
+            }
+            saveSearch(loc);
+
+            Log.i("TAG","Here is the value!" + loc);
             startActivity(i);
         }
 
     }
+    public void saveSearch(String s){
+        SharedPreferences sharedPreferences = getSharedPreferences(SEARCH_DATA,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TEXT,s);
+        editor.apply();
+    }
+
 
 }
 

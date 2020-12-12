@@ -47,7 +47,7 @@
                 app:titleTextColor="@color/colorAccent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/search_param"
                 android:layout_width="263dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="176dp"
@@ -85,7 +85,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.235"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/search_param"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
