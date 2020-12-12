@@ -25,7 +25,7 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-
+    String Query_Parameter;
     DrawerLayout drawerLayout;
     NavigationView nagivationView;
     Toolbar toolbar;
@@ -66,7 +66,7 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
             nagivationView_special.getMenu().findItem(R.id.sign_in_menu).setVisible(false);
 
         }
-        else{
+        else {
             //hide the menu_username_text
 
             //hide the avi_menu element
@@ -133,6 +133,17 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
     }
 
 
+    public void OnClick(View button_view)
+    {
+
+        if( button_view.getId() == R.id.search_btn )
+        {
+            Intent i = new Intent(UserHome.this, SearchActivity.class);
+            i.putExtra("QUERY_URL", Query_Parameter);
+            startActivity(i);
+        }
+
+    }
 
 }
 

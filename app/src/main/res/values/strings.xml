@@ -4,5 +4,8 @@
 
     <string name="navigation_drawer_open"> Open Drawer Navigation1</string>
     <string name="navigation_drawer_close"> Close Drawer Navigation1</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="tab_text_1">List View</string>
+    <string name="tab_text_2">Map View</string>
 
 </resources>
