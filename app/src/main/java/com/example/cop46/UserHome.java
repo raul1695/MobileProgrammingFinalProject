@@ -25,6 +25,7 @@ import org.w3c.dom.Text;
 
 public class UserHome extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    // These two variables are used along the shared preference library in order to store app data locally
     public static final String SEARCH_DATA = "searchData";
     public static final String TEXT = "text";
 
@@ -58,6 +59,7 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
         toggle.syncState();
         nagivationView.setNavigationItemSelectedListener(this);
 
+        // This with authentication logic. If the user is null, the user is "guest"
         if(user !=null)
         {
             //find by id the menu_username_text textview and set it to the user's display name.
@@ -92,6 +94,8 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
 
     }
 
+    // This function is required as the behavior of the original onBackPressed was unsatisfactory
+    //Overiding this function allows the back press to close instead of returning to the parent activity
     @Override
     public void onBackPressed()
     {
@@ -107,7 +111,9 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
 
 
 
-
+    // this function deals with the drawer menu logic
+    // The intents detail the different activity changes depending the btn clicked
+    // click sign_in_menu btn = send user to sign in activity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
@@ -159,6 +165,11 @@ public class UserHome extends AppCompatActivity implements NavigationView.OnNavi
         }
 
     }
+
+    // This function saves onto the memory a variable that can then be accessed by all activities.
+    // This feature is important because it will allow me to give each tab of my search result
+    // access to the "searched" data term. 
+    // with this info each individual tab can perform an api query and re-interpret the data as needed
     public void saveSearch(String s){
         SharedPreferences sharedPreferences = getSharedPreferences(SEARCH_DATA,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
