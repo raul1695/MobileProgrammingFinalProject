@@ -1,3 +1,5 @@
+//The favorite activity is linked in the drawer menu
+
 package com.example.cop46;
 
 import androidx.appcompat.app.AppCompatActivity;
